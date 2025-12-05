@@ -1,4 +1,4 @@
-RGR Project – Game & Platform Management
+🎮 RGR Project – Game & Platform Management 🎮
                          
 | Опис |
 
