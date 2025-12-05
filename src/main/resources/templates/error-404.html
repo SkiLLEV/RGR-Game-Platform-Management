@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>404 - Page Not Found</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #1a1a1a; color: white; text-align: center; padding-top: 100px; }
+        h1 { font-size: 6em; color: #e74c3c; }
+        p { font-size: 1.5em; }
+        a { color: #f39c12; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<h1>404</h1>
+<p>Сторінку не знайдено 😢</p>
+<a th:href="@{/}">Повернутися на головну</a>
+</body>
+</html>

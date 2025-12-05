@@ -21,7 +21,7 @@ public class PlatformRepository {
 
     // --- ВРАЗЛИВИЙ МЕТОД  ---
     public void save(String name, String manufacturer) {
-        String sql = "INSERT INTO platforms (platform_name, manufacturer) VALUES ('" + name + "', '" + manufacturer + "')";
+        String sql = "INSERT INTO platforms (name, manufacturer) VALUES ('" + name + "', '" + manufacturer + "')";
 
         try (Connection conn = dataSource.getConnection();
              Statement statement = conn.createStatement()) {
@@ -35,7 +35,7 @@ public class PlatformRepository {
     // --- БЕЗПЕЧНИЙ МЕТОД  ---
     // Використовує PreparedStatement, тому SQL Injection тут неможлива
     public void saveSecure(String name, String manufacturer) {
-        String sql = "INSERT INTO platforms (platform_name, manufacturer) VALUES (?, ?)";
+        String sql = "INSERT INTO platforms (name, manufacturer) VALUES (?, ?)";
 
         try (Connection conn = dataSource.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -76,7 +76,7 @@ public class PlatformRepository {
             while (rs.next()) {
                 platforms.add(new Platform(
                         rs.getInt("id"),
-                        rs.getString("platform_name"),
+                        rs.getString("name"),
                         rs.getString("manufacturer")
                 ));
             }

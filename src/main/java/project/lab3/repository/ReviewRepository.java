@@ -12,11 +12,9 @@ import java.util.List;
 @Repository
 public class ReviewRepository {
     private final DataSource dataSource;
-
     public ReviewRepository(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-
     public void save(String author, String text, int gameId) {
         String sql = "INSERT INTO reviews (author, text, game_id) VALUES (?, ?, ?)";
         try (Connection conn = dataSource.getConnection();

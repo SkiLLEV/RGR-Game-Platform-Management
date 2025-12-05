@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>401 - Unauthorized</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #1a1a1a; color: white; text-align: center; padding-top: 100px; }
+        h1 { font-size: 6em; color: #f1c40f; }
+        p { font-size: 1.5em; }
+        a { color: #3498db; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<h1>401</h1>
+<p>Вам потрібно увійти, щоб переглянути цю сторінку 🔒</p>
+<a th:href="@{/login}">Увійти</a>
+</body>
+</html>
