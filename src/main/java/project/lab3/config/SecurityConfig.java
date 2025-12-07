@@ -34,10 +34,9 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
-
                 .authorizeHttpRequests(auth -> auth
 
-                        // Відкриті сторінки (для всіх)
+                        // Відкриті сторінки для всіх
                         .requestMatchers(
                                 "/",
                                 "/login",
@@ -75,8 +74,6 @@ public class SecurityConfig {
                                 "/reviews/delete/**"
                         ).hasRole("ADMIN")
 
-
-                        // ВСЕ інше
                         .anyRequest().authenticated()
                 )
 

@@ -19,7 +19,7 @@ public class PlatformRepository {
         this.dataSource = dataSource;
     }
 
-    // --- ВРАЗЛИВИЙ МЕТОД  ---
+    // вразливий метод
     public void save(String name, String manufacturer) {
         String sql = "INSERT INTO platforms (name, manufacturer) VALUES ('" + name + "', '" + manufacturer + "')";
 
@@ -32,8 +32,8 @@ public class PlatformRepository {
         }
     }
 
-    // --- БЕЗПЕЧНИЙ МЕТОД  ---
-    // Використовує PreparedStatement, тому SQL Injection тут неможлива
+    // безпечний метод
+    // використовує PreparedStatement, тому SQL Injection тут неможлива
     public void saveSecure(String name, String manufacturer) {
         String sql = "INSERT INTO platforms (name, manufacturer) VALUES (?, ?)";
 
@@ -51,7 +51,7 @@ public class PlatformRepository {
         }
     }
 
-    // --- МЕТОД ВИДАЛЕННЯ  ---
+    // метод видалення
     public void delete(int id) {
         String sql = "DELETE FROM platforms WHERE id = ?";
 

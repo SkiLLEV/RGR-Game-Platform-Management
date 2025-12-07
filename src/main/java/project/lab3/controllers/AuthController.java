@@ -20,7 +20,7 @@ public class AuthController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    // --- Логін / Реєстрація ---
+    // Логін та реєстрація
     @GetMapping("/login")
     public String loginPage() {
         return "login";

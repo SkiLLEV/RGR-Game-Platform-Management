@@ -29,7 +29,7 @@ public class PlatformController {
         return "index";
     }
 
-    // --- PLATFORMS ---
+    // Платформи
     @PostMapping("/add")
     public String addPlatform(@RequestParam String name, @RequestParam String manufacturer) {
         platformService.addPlatform(name, manufacturer);
@@ -41,7 +41,7 @@ public class PlatformController {
         return "redirect:/";
     }
 
-    // --- GAMES ---
+    // Ігри
     @PostMapping("/addGame")
     public String addGame(@RequestParam String title, @RequestParam double price, @RequestParam int platformId) {
         gameService.addGame(title, price, platformId);
@@ -53,7 +53,7 @@ public class PlatformController {
         return "redirect:/";
     }
 
-    // --- REVIEWS ---
+    // Відгуки
     @PostMapping("/addReview")
     public String addReview(@RequestParam String author, @RequestParam String text, @RequestParam int gameId) {
         reviewService.addReview(author, text, gameId);
