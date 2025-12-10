@@ -15,7 +15,8 @@ public class PlatformController {
     private final GameService gameService;
     private final ReviewService reviewService;
 
-    public PlatformController(PlatformService platformService, GameService gameService, ReviewService reviewService) {
+    public PlatformController(PlatformService platformService,
+                              GameService gameService, ReviewService reviewService) {
         this.platformService = platformService;
         this.gameService = gameService;
         this.reviewService = reviewService;
@@ -43,7 +44,8 @@ public class PlatformController {
 
     // Ігри
     @PostMapping("/addGame")
-    public String addGame(@RequestParam String title, @RequestParam double price, @RequestParam int platformId) {
+    public String addGame(@RequestParam String title, @RequestParam double price,
+                          @RequestParam int platformId) {
         gameService.addGame(title, price, platformId);
         return "redirect:/";
     }
@@ -55,7 +57,8 @@ public class PlatformController {
 
     // Відгуки
     @PostMapping("/addReview")
-    public String addReview(@RequestParam String author, @RequestParam String text, @RequestParam int gameId) {
+    public String addReview(@RequestParam String author,
+                            @RequestParam String text, @RequestParam int gameId) {
         reviewService.addReview(author, text, gameId);
         return "redirect:/";
     }
