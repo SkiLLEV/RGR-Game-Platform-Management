@@ -1,7 +1,7 @@
 package project.lab3.models;
 
 public class User {
-    private long id;  // змінили на long
+    private long id;
     private String username;
     private String passwordHash;
     private String role;
