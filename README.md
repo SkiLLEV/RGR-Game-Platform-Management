@@ -28,20 +28,19 @@ cd project.lab3
 Створіть користувача для підключення
 
 3. Налаштування application.properties
-properties
-Копировать код
+
 spring.datasource.url=jdbc:postgresql://localhost:5432/lab3db
 spring.datasource.username=ВАШ_КОРИСТУВАЧ
 spring.datasource.password=ВАШ_ПАРОЛЬ
 spring.jpa.hibernate.ddl-auto=update
+
 4. Збірка та запуск
-bash
-Копировать код
+
 mvn clean install
 mvn spring-boot:run
+
 5. Відкрити у браузері
-arduino
-Копировать код
+
 http://localhost:8080
 🗄️ Ініціалізація даних
 При першому запуску базу можна ініціалізувати через SQL-скрипти.
