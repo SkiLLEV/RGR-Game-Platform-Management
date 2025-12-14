@@ -1,14 +1,15 @@
 🎮 RGR Project – Game & Platform Management 🎮
-                         
-| Опис |
+📌 Description
 
-Цей проєкт дозволяє керувати платформами, іграми та відгуками.
+This project is a web application for managing platforms, games, and user reviews.
 
-    USER – може переглядати всі платформи, ігри та відгуки.
+User roles:
 
-    ADMIN – може додавати, та видаляти платформи, ігри та відгуки.
+USER – can view platforms, games, and reviews
 
-| Вимоги |
+ADMIN – can add and delete platforms, games, and reviews
+
+⚙️ Requirements
 
 Java 17+
 
@@ -18,57 +19,60 @@ PostgreSQL
 
 Spring Boot 3.x
 
-| Клонування та запуск |
-
-1. Клонувати репозиторій:
-
-git clone <URL репозиторію>
+🚀 Clone & Run
+1️⃣ Clone the repository
+git clone <REPOSITORY_URL>
 cd project.lab3
 
+2️⃣ Database configuration
 
-2. Налаштувати базу даних:
+Create a PostgreSQL database:
 
-Створіть базу lab3db
+CREATE DATABASE lab3db;
 
-Створіть користувача для підключення
 
-Налаштуйте application.properties:
+Create a database user and grant permissions.
 
-spring.datasource.url=jdbc:mysql://localhost:3306/lab3db
-spring.datasource.username=ВАШ_КОРИСТУВАЧ
-spring.datasource.password=ВАШ_ПАРОЛЬ
+Configure application.properties:
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/lab3db
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
 spring.jpa.hibernate.ddl-auto=update
 
 
-3. Збірка і запуск:
+🔐 Database credentials must be provided as environment variables.
 
+3️⃣ Build & Run the project
 mvn clean install
 mvn spring-boot:run
 
-
-4. Відкрити у браузері:
-
+4️⃣ Open in browser
 http://localhost:8080
 
-| Ініціалізація даних |
+🗄️ Data Initialization
 
-При першому запуску базу можна ініціалізувати через SQL скрипти.
+On the first run, the database schema is generated automatically.
 
-Зауваження: не можна додавати дублікати об’єктів (тільки унікальні назви платформ, ігор тощо).
+Initial data can be inserted using SQL scripts if needed.
 
-Для тестування можна створити користувача ADMIN вручну у базі, щоб мати доступ до CRUD функцій.
+Duplicate entries are not allowed (platforms, games, and reviews must be unique).
 
-| Авторизація та ролі |
+To access full CRUD functionality, an ADMIN user can be created manually in the database.
 
-USER – перегляд платформ, ігор, відгуків.
+🔐 Authorization & Roles
+Role	Permissions
+USER	View platforms, games, and reviews
+ADMIN	View, add, edit, and delete platforms, games, and reviews
+⚠️ Important Notes
 
-ADMIN – перегляд + додавання, редагування, видалення платформ, ігор та відгуків.
+❌ User passwords must not be stored in the README or source code.
 
+✔ Platform, game, and review identifiers must be unique.
 
-| Важливі правила |
+✔ All add/delete operations are performed through the web interface (Admin access only).
 
-Паролі користувачів не зберігати у README.
+🧑‍💻 Author
 
-Ідентифікатори платформ, ігор, відгуків повинні бути унікальні.
-
-Додавання нового об’єкта відбувається через форму на сайті або Admin панелі.
+RGR Project – Game & Platform Management
+Spring Boot Web Applicationпанелі.
